@@ -94,7 +94,7 @@ namespace eAgenda.Controladores.CompromissoModule
                 CP.[ID] = @ID";
 
         private const string sqlSelecionarTodosCompromissosPassados =
-           @"SELECT 
+            @"SELECT 
                 CP.[ID],       
                 CP.[DATA],
                 CP.[ASSUNTO],
@@ -114,7 +114,7 @@ namespace eAgenda.Controladores.CompromissoModule
             ON
                 CT.ID = CP.ID_CONTATO
             WHERE 
-                CP.[DATA] < @DATA";
+                CP.[DATA] <= @DATA";
 
         private const string sqlSelecionarTodosCompromissosFuturos =
             @"SELECT 
@@ -148,16 +148,16 @@ namespace eAgenda.Controladores.CompromissoModule
                 [ID] = @ID";
 
         private const string sqlVerificarHorarioOcupado =
-            @"SELECT 
-                COUNT(*) 
+            @"SELECT
+	            COUNT(*)
             FROM 
-                [TBCOMPROMISSO]
+	            TBCOMPROMISSO
             WHERE 
-                @DATA_INSERCAO = [DATA]
-            AND
-                @HORA_INICIO_INSERCAO >= [HORAINICIO] AND @HORA_INICIO_INSERCAO < [HORATERMINO]
+                [DATA] = @DATA 
+            AND 
+                @HORA_INICIO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO 
             OR 
-               @HORA_TERMINO_INSERCAO >= [HORAINICIO] AND @HORA_TERMINO_INSERCAO < [HORATERMINO]";
+                @HORA_TERMINO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO";
 
         #endregion
 
@@ -167,28 +167,15 @@ namespace eAgenda.Controladores.CompromissoModule
 
             if (resultadoValidacao == "ESTA_VALIDO")
             {
-                bool horarioOcupado = VerfificarHorarioOcupado(registro.Data, registro.HoraInicio, registro.HoraTermino);
+                bool horarioOcupado = VerificarHorarioOcupado(registro.Data, registro.HoraInicio, registro.HoraTermino);
 
                 if (horarioOcupado)
-                    resultadoValidacao = "Nesta data e horário já tem um compromisso cadastrado";
+                    resultadoValidacao = "Nesta data e horário já tem um compromisso agendado";
                 else
                     registro.Id = Db.Insert(sqlInserirCompromisso, ObtemParametrosCompromisso(registro));
             }
 
             return resultadoValidacao;
-        }
-
-        private bool VerfificarHorarioOcupado(DateTime data, TimeSpan horaInicio, TimeSpan horaTermino)
-        {
-
-            Dictionary<string, object> DicionarioParametros = new Dictionary<string, object>()
-            {
-                {"DATA_INSERCAO", data},
-                {"HORA_INICIO_INSERCAO", horaInicio.Ticks},
-                {"HORA_TERMINO_INSERCAO", horaTermino.Ticks}
-            };
-
-            return Db.Exists(sqlVerificarHorarioOcupado, DicionarioParametros);
         }
 
         public override string Editar(int id, Compromisso registro)
@@ -197,15 +184,8 @@ namespace eAgenda.Controladores.CompromissoModule
 
             if (resultadoValidacao == "ESTA_VALIDO")
             {
-                bool horarioOcupado = VerfificarHorarioOcupado(registro.Data, registro.HoraInicio, registro.HoraTermino);
-                if (horarioOcupado)
-                    resultadoValidacao = "Nesta data e horário já tem um compromisso cadastrado";
-                else
-                {
-                    registro.Id = id;
-                    Db.Update(sqlEditarCompromisso, ObtemParametrosCompromisso(registro));
-                }
-                   
+                registro.Id = id;
+                Db.Update(sqlEditarCompromisso, ObtemParametrosCompromisso(registro));
             }
 
             return resultadoValidacao;
@@ -253,6 +233,21 @@ namespace eAgenda.Controladores.CompromissoModule
         public List<Compromisso> SelecionarCompromissosPassados(DateTime data)
         {
             return Db.GetAll(sqlSelecionarTodosCompromissosPassados, ConverterEmCompromisso, AdicionarParametro("DATA", data));
+        }
+
+        /// <summary>
+        /// //https://stackoverflow.com/questions/8503825/what-is-the-correct-sql-type-to-store-a-net-timespan-with-values-240000
+        /// </summary>
+        public bool VerificarHorarioOcupado(DateTime data, TimeSpan horaInicioDesejado, TimeSpan horaTerminoDesejado)
+        {
+            var parametros = new Dictionary<string, object>();
+
+            parametros.Add("DATA", data);
+
+            parametros.Add("HORA_INICIO_DESEJADO", horaInicioDesejado.Ticks);
+            parametros.Add("HORA_TERMINO_DESEJADO", horaTerminoDesejado.Ticks);
+
+            return Db.Exists(sqlVerificarHorarioOcupado, parametros);
         }
 
         private Compromisso ConverterEmCompromisso(IDataReader reader)

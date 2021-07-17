@@ -19,6 +19,8 @@ namespace eAgenda.Dominio.CompromissoModule
             Contato = contato;
         }
 
+        
+
         public string Assunto { get; }
         public string Local { get; }
         public string Link { get; }
@@ -81,6 +83,8 @@ namespace eAgenda.Dominio.CompromissoModule
             return resultadoValidacao;
         }
 
+
+        
 
     }
 }

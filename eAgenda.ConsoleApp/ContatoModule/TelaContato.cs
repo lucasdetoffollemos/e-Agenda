@@ -34,20 +34,16 @@ namespace eAgenda.ConsoleApp.ContatoModule
 
             Console.WriteLine("\nContatos Agrupados\n");
 
-            if (contatosAgrupadosPorCargo == null)
+            if (contatosAgrupadosPorCargo.Count == 0)
                 ApresentarMensagem("Nenhum agrupamento encontrado", TipoMensagem.Atencao);
 
             else
-            {
                 foreach (var grupo in contatosAgrupadosPorCargo)
                 {
                     Console.WriteLine("\nCargo: " + grupo.Campo);
                     Console.WriteLine();
                     ApresentarTabela(grupo.Contatos);
                 }
-
-            }
-                
         }
 
         public override void ApresentarTabela(List<Contato> registros)
@@ -80,7 +76,7 @@ namespace eAgenda.ConsoleApp.ContatoModule
             Console.Write("Digite a empresa: ");
             string empresa = Console.ReadLine();
 
-            return new Contato(nome, email, telefone, cargo, empresa);
+            return new Contato(nome, email, telefone, empresa, cargo);
         }
     }
 }

@@ -11,315 +11,314 @@ using System.Collections.Generic;
 namespace eAgenda.Tests.CompromissoModule
 {
     [TestClass]
+    [TestCategory("Controladores")]
     public class ControladorCompromissoTest
     {
-        ControladorCompromisso controlador = null;
+        ControladorCompromisso controladorCompromisso = null;
         ControladorContato controladorContato = null;
+
         public ControladorCompromissoTest()
         {
-            controlador = new ControladorCompromisso();
+            controladorCompromisso = new ControladorCompromisso();
             controladorContato = new ControladorContato();
+
             Db.Update("DELETE FROM [TBCOMPROMISSO]");
             Db.Update("DELETE FROM [TBCONTATO]");
-            Db.Update("DELETE FROM [TBTAREFA]");
         }
 
-
-
         [TestMethod]
-        public void DeveInserir_CompromissoComContato()
+        public void DeveInserir_Compromisso()
         {
             //arrange
-            var contato = new Contato("José Pedro", "jose.pedro@gmail", "321654987", "JP Ltda", "Desenvolvedor");
-
+            Contato contato = new Contato("José Pedro", "jose.pedro@gmail.com", "321654987", "JP Ltda", "Dev");
             controladorContato.InserirNovo(contato);
 
-            var novoCompromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), controladorContato.SelecionarPorId(contato.Id));
+            Compromisso novoCompromisso = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), contato);
 
             //action
-            controlador.InserirNovo(novoCompromisso);
+            controladorCompromisso.InserirNovo(novoCompromisso);
 
             //assert
-            var contatoEncontrado = controlador.SelecionarPorId(novoCompromisso.Id);
+            var contatoEncontrado = controladorCompromisso.SelecionarPorId(novoCompromisso.Id);
             contatoEncontrado.Should().Be(novoCompromisso);
         }
-
+       
         [TestMethod]
-        public void DeveInserir_CompromissoSemContato()
-        {
-            var novoCompromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-
-            //action
-            controlador.InserirNovo(novoCompromisso);
-
-            //assert
-            var contatoEncontrado = controlador.SelecionarPorId(novoCompromisso.Id);
-            contatoEncontrado.Should().Be(novoCompromisso);
-        }
-
-        [TestMethod]
-        public void DeveEditar_Compromisso()
+        public void DeveAtualizar_Compromisso()
         {
             //arrange
-            var compromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
+            var contato = new Contato("José Pedro", "jose.pedro@gmail.com", "321654987", "JP Ltda", "Dev");
+            controladorContato.InserirNovo(contato);
 
-            controlador.InserirNovo(compromisso);
+            Compromisso compromisso = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), contato);
 
-            var novoCompromisso = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2022, 10, 10), new TimeSpan(13, 00, 00), new TimeSpan(14, 30, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
+
+            DateTime amanha = DateTime.Today.AddDays(1);
+
+            var novoCompromisso = new Compromisso("Validar plano de Marketing", "Midilages", "",
+                amanha, new TimeSpan(17, 00, 00), new TimeSpan(18, 00, 00), contato);
 
             //action
-            controlador.Editar(compromisso.Id, novoCompromisso);
+            controladorCompromisso.Editar(compromisso.Id, novoCompromisso);
 
             //assert
-            Compromisso compromissoEncontrado = controlador.SelecionarPorId(compromisso.Id);
+            Compromisso compromissoEncontrado = controladorCompromisso.SelecionarPorId(compromisso.Id);
             compromissoEncontrado.Should().Be(novoCompromisso);
-
         }
 
         [TestMethod]
-
-        public void DeveExcluir_UmCompromisso()
+        public void DeveExcluir_Compromisso()
         {
-            //arrange            
-            var novoCompromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(novoCompromisso);
+            var contato = new Contato("José Pedro", "jose.pedro@gmail.com", "321654987", "JP Ltda", "Dev");
+            controladorContato.InserirNovo(contato);
 
-            ////action    
-            controlador.Excluir(novoCompromisso.Id);
+            Compromisso compromisso = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), contato);
+
+            controladorCompromisso.InserirNovo(compromisso);
+
+            //action            
+            controladorCompromisso.Excluir(compromisso.Id);
 
             //assert
-            Compromisso compromissoEncontrado = controlador.SelecionarPorId(novoCompromisso.Id);
-            compromissoEncontrado.Should().BeNull();
+            Compromisso contatoEncontrado = controladorCompromisso.SelecionarPorId(compromisso.Id);
+            contatoEncontrado.Should().BeNull();
         }
 
         [TestMethod]
         public void DeveSelecionar_Compromisso_PorId()
         {
             //arrange
-            var novoCompromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
+            Compromisso compromisso = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
 
-            controlador.InserirNovo(novoCompromisso);
-
-            //actiom
-            Compromisso compromissoEncontrado = controlador.SelecionarPorId(novoCompromisso.Id);
+            //action
+            Compromisso compromissoEncontrado = controladorCompromisso.SelecionarPorId(compromisso.Id);
 
             //assert
-            compromissoEncontrado.Should().Be(novoCompromisso);
-
+            compromissoEncontrado.Should().NotBeNull();
         }
 
         [TestMethod]
         public void DeveSelecionar_TodosCompromissos()
         {
             //arrange
-            var c1 = new Compromisso("Negocios", "Casa", "meet.com",
-                 new DateTime(2002, 02, 23), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
+            var compromissos = new List<Compromisso>
+            {
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null),
 
-            controlador.InserirNovo(c1);
+                new Compromisso("Desenhar logotipo", "Agencia", "",
+                    DateTime.Today, new TimeSpan(14, 05, 00), new TimeSpan(15, 00, 00), null),
 
-            var c2 = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2021, 09, 12), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c2);
+                new Compromisso("Validar logotipo", "Agencia", "",
+                    DateTime.Today, new TimeSpan(16, 00, 00), new TimeSpan(17, 00, 00), null),
 
-            var c3 = new Compromisso("Lavar louça", "Cozinha", "Presencial",
-               new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c3);
+                new Compromisso("Validar plano de marketing", "Agencia", "",
+                    DateTime.Today, new TimeSpan(17, 05, 00), new TimeSpan(18, 00, 00), null)
+            };
 
+            foreach (var c in compromissos)
+                controladorCompromisso.InserirNovo(c);
 
             //action
-            var compromissos = controlador.SelecionarTodos();
+            var contatos = controladorCompromisso.SelecionarTodos();
 
             //assert
-            compromissos.Should().HaveCount(3);
-            compromissos[0].Assunto.Should().Be("Negocios");
-            compromissos[1].Assunto.Should().Be("Jantar");
-            compromissos[2].Assunto.Should().Be("Lavar louça");
+            contatos.Should().HaveCount(4);
         }
 
         [TestMethod]
-        public void DeveSelecionar_TodosCompromissos_Passados()
+        public void DeveSelecionar_CompromissosFuturos_PorPeriodo()
         {
             //arrange
+            DateTime segunda = new DateTime(2021, 6, 28);
+            DateTime terca = new DateTime(2021, 6, 29);
+            DateTime quarta = new DateTime(2021, 6, 30);
+            DateTime quinta = new DateTime(2021, 7, 1);
+            DateTime sexta = new DateTime(2021, 7, 2);
 
-            //passado
-            var c1 = new Compromisso("Negocios", "Casa", "meet.com",
-                 new DateTime(2002, 02, 23), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
+            var compromissos = new List<Compromisso>
+            {
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    segunda, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null),
 
-            controlador.InserirNovo(c1);
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    terca, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null),
 
-            //futuro
-            var c2 = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2021, 09, 12), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c2);
+                new Compromisso("Desenhar logotipo", "Agencia", "",
+                    quarta, new TimeSpan(14, 05, 00), new TimeSpan(15, 00, 00), null),
 
-            //futuro
-            var c3 = new Compromisso("Lavar louça", "Cozinha", "Presencial",
-               new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c3);
+                new Compromisso("Validar logotipo", "Agencia", "",
+                    quinta, new TimeSpan(16, 00, 00), new TimeSpan(17, 00, 00), null),
 
-            //passado
-            var c4 = new Compromisso("Lavar Carro", "Cozinha", "Presencial",
-               new DateTime(2020, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c4);
+                new Compromisso("Validar plano de marketing", "Agencia", "",
+                    sexta, new TimeSpan(17, 05, 00), new TimeSpan(18, 00, 00), null),               
+            };
 
-            //passado
-            var c5 = new Compromisso("Jogar Fut", "Cozinha", "Presencial",
-               new DateTime(2018, 08, 20), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c5);
+            foreach (var c in compromissos)
+                controladorCompromisso.InserirNovo(c);
 
             //action
-            var compromissosPassados = controlador.SelecionarCompromissosPassados(new DateTime(2021, 09, 10));
+            DateTime hoje = new DateTime(2021, 7, 1);
+            DateTime amanha = new DateTime(2021, 7, 2);
+            var contatos = controladorCompromisso.SelecionarCompromissosFuturos(hoje, amanha);
 
             //assert
-            compromissosPassados.Should().HaveCount(3);
-            compromissosPassados[0].Assunto.Should().Be("Negocios");
-            compromissosPassados[1].Assunto.Should().Be("Lavar Carro");
-            compromissosPassados[2].Assunto.Should().Be("Jogar Fut");
+            contatos.Should().HaveCount(2);
         }
 
         [TestMethod]
-        public void DeveSelecionar_TodosCompromissos_Futuros()
+        public void DeveSelecionar_Compromissos_NoPassado()
         {
             //arrange
+            DateTime segunda = new DateTime(2021, 6, 28);
+            DateTime terca = new DateTime(2021, 6, 29);
+            DateTime quarta = new DateTime(2021, 6, 30);
+            DateTime quinta = new DateTime(2021, 7, 1);
+            DateTime sexta = new DateTime(2021, 7, 2);
 
-            //passado
-            var c1 = new Compromisso("Negocios", "Casa", "meet.com",
-                 new DateTime(2002, 02, 23), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
+            var compromissos = new List<Compromisso>
+            {
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    segunda, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null),
 
-            controlador.InserirNovo(c1);
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    terca, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null),
 
-            //futuro
-            var c2 = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2021, 09, 12), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c2);
+                new Compromisso("Desenhar logotipo", "Agencia", "",
+                    quarta, new TimeSpan(14, 05, 00), new TimeSpan(15, 00, 00), null),
 
-            //futuro
-            var c3 = new Compromisso("Lavar louça", "Cozinha", "Presencial",
-               new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c3);
+                new Compromisso("Validar logotipo", "Agencia", "",
+                    quinta, new TimeSpan(16, 00, 00), new TimeSpan(17, 00, 00), null),
 
-            //passado
-            var c4 = new Compromisso("Lavar Carro", "Cozinha", "Presencial",
-               new DateTime(2020, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c4);
+                new Compromisso("Validar plano de marketing", "Agencia", "",
+                    sexta, new TimeSpan(17, 05, 00), new TimeSpan(18, 00, 00), null)
+            };
 
-            //passado
-            var c5 = new Compromisso("Jogar Fut", "Cozinha", "Presencial",
-               new DateTime(2018, 08, 20), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c5);
-
-            //futuro
-            var c6 = new Compromisso("Comprar coca", "Cozinha", "Presencial",
-               new DateTime(2025, 08, 20), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-            controlador.InserirNovo(c6);
-
-            DateTime dataInicio = DateTime.Now;
-            DateTime dataFim = new DateTime(2024, 08, 09);
+            foreach (var c in compromissos)
+                controladorCompromisso.InserirNovo(c);
 
             //action
-            var compromissosFuturos = controlador.SelecionarCompromissosFuturos(dataInicio, dataFim);
+            DateTime hoje = new DateTime(2021, 7, 1);
+            var contatos = controladorCompromisso.SelecionarCompromissosPassados(hoje);
 
             //assert
-            compromissosFuturos.Should().HaveCount(2);
-            compromissosFuturos[0].Assunto.Should().Be("Jantar");
-            compromissosFuturos[1].Assunto.Should().Be("Lavar louça");
-
+            contatos.Should().HaveCount(3);
         }
 
         [TestMethod]
-        public void NaoDeveInserir_NaMesmaData_NoMesmoHorario()
-        {
-            //arrange 
-            Compromisso compromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                 DateTime.Today, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
-
-            controlador.InserirNovo(compromisso);
-
-            var novoCompromisso = new Compromisso("Jantar", "Sala", "Presencial",
-                DateTime.Today, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
-
-            //action
-            string resultado = controlador.InserirNovo(novoCompromisso);
-
-            //assert
-            resultado.Should().Be("Nesta data e horário já tem um compromisso cadastrado");
-
-            List<Compromisso> compromissos = controlador.SelecionarTodos();
-            compromissos.Should().HaveCount(1);
-
-
-        }
-
-        [TestMethod]
-        public void NaoDeveEditar_NaMesmaData_NoMesmoHorario()
-        {
-            //arrange 
-            Compromisso compromisso = new Compromisso("Negocios", "Casa", "meet.com",
-                 DateTime.Today, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
-
-            controlador.InserirNovo(compromisso);
-
-            //action
-            var novoCompromisso = new Compromisso("Jantar", "Sala", "Presencial",
-               DateTime.Today, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
-
-            string resultado = controlador.Editar(compromisso.Id, novoCompromisso);
-
-            //assert
-            resultado.Should().Be("Nesta data e horário já tem um compromisso cadastrado");
-
-        }
-
-        [TestMethod]
-        public void DeveEditar_Compromisso_RemovendoContato()
+        public void NaoDeveInserir_Compromisso_NaMesmaData_NoMesmoHorario()
         {
             //arrange
-            Contato c = new Contato("Lucas", "lucas@lucas.com", "12345678", "ndd", "dev");
-            controladorContato.InserirNovo(c);
+            Compromisso compromisso = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null);
             
-            var compromissoComContato = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), controladorContato.SelecionarPorId(c.Id));
+            controladorCompromisso.InserirNovo(compromisso);
 
-            controlador.InserirNovo(compromissoComContato);
-
-            var novoCompromisso = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2021, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-
+            Compromisso novoCompromisso = new Compromisso("Desenhar logotipo", "Agencia", "",
+                    DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null);
+            
             //action
-            controlador.Editar(compromissoComContato.Id, novoCompromisso);
+            string resultado = controladorCompromisso.InserirNovo(novoCompromisso);
 
             //assert
-            var contatoEncontrado = controlador.SelecionarPorId(compromissoComContato.Id);
-            contatoEncontrado.Should().Be(novoCompromisso);
+            resultado.Should().Be("Nesta data e horário já tem um compromisso agendado");
+            List<Compromisso> compromissos = controladorCompromisso.SelecionarTodos();
+
+            compromissos.Should().HaveCount(1);
         }
 
         [TestMethod]
-        public void DeveEditar_Compromisso_InserindoContato()
+        public void DeveRetornarHorarioLivre_1()
         {
             //arrange
-            var compromissoComContato = new Compromisso("Negocios", "Casa", "meet.com",
-                new DateTime(2022, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), null);
-
-            controlador.InserirNovo(compromissoComContato);
-
-            Contato c = new Contato("Lucas", "lucas@lucas.com", "12345678", "ndd", "dev");
-            controladorContato.InserirNovo(c);
-
-            var novoCompromisso = new Compromisso("Jantar", "Sala", "Presencial",
-                new DateTime(2021, 10, 10), new TimeSpan(12, 00, 00), new TimeSpan(12, 30, 00), controladorContato.SelecionarPorId(c.Id));
+            DateTime hoje = DateTime.Today;            
+            var compromisso = new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
 
             //action
-            controlador.Editar(compromissoComContato.Id, novoCompromisso);
+            bool horarioOcupado = controladorCompromisso.VerificarHorarioOcupado(hoje, new TimeSpan(14, 00, 00), new TimeSpan(15, 00, 00));
 
             //assert
-            var contatoEncontrado = controlador.SelecionarPorId(compromissoComContato.Id);
-            contatoEncontrado.Should().Be(novoCompromisso);
+            horarioOcupado.Should().Be(false);
+        }
+
+        [TestMethod]
+        public void DeveRetornarHorarioLivre_2()
+        {
+            //arrange
+            DateTime hoje = DateTime.Today;            
+            var compromissos = new List<Compromisso>
+            {
+                new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null),
+
+                new Compromisso("Desenhar logotipo", "Agencia", "",
+                    hoje, new TimeSpan(14, 00, 00), new TimeSpan(15, 00, 00), null)              
+            };
+
+            foreach (var c in compromissos)
+                controladorCompromisso.InserirNovo(c);
+
+            //action
+            bool horarioOcupado = controladorCompromisso.VerificarHorarioOcupado(hoje, new TimeSpan(13, 01, 00), new TimeSpan(13, 59, 00));
+
+            //assert
+            horarioOcupado.Should().Be(false);
+        }
+
+        [TestMethod]
+        public void DeveRetornarHorarioOcupado_CasoHorarioDesejadoSejaIgual()
+        {
+            //arrange
+            DateTime hoje = DateTime.Today;
+            var compromisso = new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
+
+            //action
+            bool horarioOcupado = controladorCompromisso.VerificarHorarioOcupado(hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00));
+
+            //assert
+            horarioOcupado.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void DeveRetornarHorarioOcupado_CasoHorarioInicialDesejadoEstejaOcupado()
+        {
+            //arrange
+            DateTime hoje = DateTime.Today;
+            var compromisso = new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
+
+            //action
+            bool horarioOcupado = controladorCompromisso.VerificarHorarioOcupado(hoje, new TimeSpan(12, 30, 00), new TimeSpan(13, 30, 00));
+
+            //assert
+            horarioOcupado.Should().Be(true);
+        }
+
+        [TestMethod]
+        public void DeveRetornarHorarioOcupado_CasoHorarioFinalDesejadoEstejaOcupado()
+        {
+            //arrange
+            DateTime hoje = DateTime.Today;
+            var compromisso = new Compromisso("Montar plano de Marketing", "Agencia", "",
+                    hoje, new TimeSpan(12, 00, 00), new TimeSpan(13, 00, 00), null);
+            controladorCompromisso.InserirNovo(compromisso);
+
+            //action
+            bool horarioOcupado = controladorCompromisso.VerificarHorarioOcupado(hoje, new TimeSpan(11, 30, 00), new TimeSpan(12, 30, 00));
+
+            //assert
+            horarioOcupado.Should().Be(true);
         }
 
     }
