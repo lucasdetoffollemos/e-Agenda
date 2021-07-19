@@ -40,7 +40,7 @@ namespace WindowsFormsApp.ContatoModule
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(130, 683);
+            this.btVoltar.Location = new System.Drawing.Point(130, 681);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(265, 54);
             this.btVoltar.TabIndex = 11;
@@ -96,7 +96,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 24);
+            this.label1.Location = new System.Drawing.Point(103, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(323, 36);
             this.label1.TabIndex = 6;
@@ -106,6 +106,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(551, 760);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btExcluir);
@@ -115,7 +116,7 @@ namespace WindowsFormsApp.ContatoModule
             this.Controls.Add(this.label1);
             this.Name = "TelaContato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaContato";
+            this.Text = "Controle de Contatos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

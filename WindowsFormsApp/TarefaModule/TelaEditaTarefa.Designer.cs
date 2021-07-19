@@ -53,11 +53,11 @@ namespace WindowsFormsApp
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(284, 528);
+            this.btCancelar.Location = new System.Drawing.Point(301, 516);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(240, 42);
+            this.btCancelar.Size = new System.Drawing.Size(201, 55);
             this.btCancelar.TabIndex = 1;
-            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.Text = "Voltar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -115,7 +115,7 @@ namespace WindowsFormsApp
             // txbPercentual
             // 
             this.txbPercentual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPercentual.Location = new System.Drawing.Point(460, 351);
+            this.txbPercentual.Location = new System.Drawing.Point(482, 351);
             this.txbPercentual.Name = "txbPercentual";
             this.txbPercentual.Size = new System.Drawing.Size(100, 30);
             this.txbPercentual.TabIndex = 10;
@@ -123,9 +123,9 @@ namespace WindowsFormsApp
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(284, 420);
+            this.btEditar.Location = new System.Drawing.Point(260, 430);
             this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(240, 76);
+            this.btEditar.Size = new System.Drawing.Size(291, 62);
             this.btEditar.TabIndex = 11;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
@@ -135,6 +135,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 593);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbPercentual);
@@ -147,7 +148,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.label1);
             this.Name = "TelaEditaTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaEditaTarefa";
+            this.Text = "Editar Tarefa";
             this.ResumeLayout(false);
             this.PerformLayout();
 

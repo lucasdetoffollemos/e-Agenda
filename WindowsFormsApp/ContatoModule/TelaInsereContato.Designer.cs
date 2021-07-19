@@ -158,9 +158,9 @@ namespace WindowsFormsApp.ContatoModule
             // btInsere
             // 
             this.btInsere.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInsere.Location = new System.Drawing.Point(132, 605);
+            this.btInsere.Location = new System.Drawing.Point(151, 607);
             this.btInsere.Name = "btInsere";
-            this.btInsere.Size = new System.Drawing.Size(321, 75);
+            this.btInsere.Size = new System.Drawing.Size(291, 62);
             this.btInsere.TabIndex = 11;
             this.btInsere.Text = "Inserir";
             this.btInsere.UseVisualStyleBackColor = true;
@@ -169,9 +169,9 @@ namespace WindowsFormsApp.ContatoModule
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(164, 718);
+            this.btVoltar.Location = new System.Drawing.Point(196, 712);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(254, 58);
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
             this.btVoltar.TabIndex = 12;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -181,6 +181,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(636, 810);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btInsere);
@@ -197,7 +198,7 @@ namespace WindowsFormsApp.ContatoModule
             this.Controls.Add(this.label1);
             this.Name = "TelaInsereContato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaInsereContato";
+            this.Text = "Inserir Contato";
             this.Load += new System.EventHandler(this.TelaInsereContato_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

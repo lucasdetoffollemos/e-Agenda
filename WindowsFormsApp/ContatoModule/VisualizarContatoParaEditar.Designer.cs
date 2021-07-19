@@ -35,6 +35,12 @@ namespace WindowsFormsApp.ContatoModule
             this.txbId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new System.Data.DataSet();
             this.dtContatos = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -43,12 +49,6 @@ namespace WindowsFormsApp.ContatoModule
             this.dataColumn4 = new System.Data.DataColumn();
             this.dataColumn5 = new System.Data.DataColumn();
             this.dataColumn6 = new System.Data.DataColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtContatos)).BeginInit();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp.ContatoModule
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVoltar.Location = new System.Drawing.Point(923, 44);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(204, 53);
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
             this.btVoltar.TabIndex = 4;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@ namespace WindowsFormsApp.ContatoModule
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(542, 582);
+            this.btEditar.Location = new System.Drawing.Point(454, 581);
             this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(171, 46);
+            this.btEditar.Size = new System.Drawing.Size(291, 62);
             this.btEditar.TabIndex = 8;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
@@ -123,47 +123,6 @@ namespace WindowsFormsApp.ContatoModule
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1147, 299);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
-            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
-            this.dtContatos});
-            // 
-            // dtContatos
-            // 
-            this.dtContatos.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn1,
-            this.dataColumn2,
-            this.dataColumn3,
-            this.dataColumn4,
-            this.dataColumn5,
-            this.dataColumn6});
-            this.dtContatos.TableName = "dtContatos";
-            // 
-            // dataColumn1
-            // 
-            this.dataColumn1.ColumnName = "Id";
-            // 
-            // dataColumn2
-            // 
-            this.dataColumn2.ColumnName = "Nome";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "Email";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "Telefone";
-            // 
-            // dataColumn5
-            // 
-            this.dataColumn5.ColumnName = "Cargo";
-            // 
-            // dataColumn6
-            // 
-            this.dataColumn6.ColumnName = "Empresa";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -213,10 +172,52 @@ namespace WindowsFormsApp.ContatoModule
             this.empresaDataGridViewTextBoxColumn.Name = "empresaDataGridViewTextBoxColumn";
             this.empresaDataGridViewTextBoxColumn.Width = 125;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
+            this.dtContatos});
+            // 
+            // dtContatos
+            // 
+            this.dtContatos.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4,
+            this.dataColumn5,
+            this.dataColumn6});
+            this.dtContatos.TableName = "dtContatos";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "Id";
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "Nome";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "Email";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "Telefone";
+            // 
+            // dataColumn5
+            // 
+            this.dataColumn5.ColumnName = "Cargo";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "Empresa";
+            // 
             // VisualizarContatoParaEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1152, 670);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btEditar);
@@ -225,7 +226,8 @@ namespace WindowsFormsApp.ContatoModule
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label1);
             this.Name = "VisualizarContatoParaEditar";
-            this.Text = "VisualizarContatoParaEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Visualizando para editar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtContatos)).EndInit();

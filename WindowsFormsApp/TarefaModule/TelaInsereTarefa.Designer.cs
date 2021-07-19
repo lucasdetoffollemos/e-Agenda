@@ -104,11 +104,11 @@ namespace WindowsFormsApp
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(127, 506);
+            this.btCancelar.Location = new System.Drawing.Point(139, 505);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(235, 38);
+            this.btCancelar.Size = new System.Drawing.Size(201, 55);
             this.btCancelar.TabIndex = 6;
-            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.Text = "Voltar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -116,6 +116,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(495, 595);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btInserir);
@@ -126,7 +127,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.label1);
             this.Name = "TelaInsereTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaInsereTarefa";
+            this.Text = "Inserir Tarefa";
             this.ResumeLayout(false);
             this.PerformLayout();
 

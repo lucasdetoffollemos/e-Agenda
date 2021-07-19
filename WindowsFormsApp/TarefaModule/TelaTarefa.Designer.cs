@@ -41,17 +41,17 @@ namespace WindowsFormsApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 49);
+            this.label1.Location = new System.Drawing.Point(130, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 36);
+            this.label1.Size = new System.Drawing.Size(295, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Tarefas";
+            this.label1.Text = "Controle de Tarefas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btInserir
             // 
             this.btInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInserir.Location = new System.Drawing.Point(141, 138);
+            this.btInserir.Location = new System.Drawing.Point(150, 137);
             this.btInserir.Name = "btInserir";
             this.btInserir.Size = new System.Drawing.Size(265, 99);
             this.btInserir.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace WindowsFormsApp
             // btVisualizar
             // 
             this.btVisualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVisualizar.Location = new System.Drawing.Point(141, 281);
+            this.btVisualizar.Location = new System.Drawing.Point(150, 280);
             this.btVisualizar.Name = "btVisualizar";
             this.btVisualizar.Size = new System.Drawing.Size(265, 99);
             this.btVisualizar.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace WindowsFormsApp
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(141, 424);
+            this.btEditar.Location = new System.Drawing.Point(150, 423);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(265, 99);
             this.btEditar.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace WindowsFormsApp
             // btExcluir
             // 
             this.btExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(141, 566);
+            this.btExcluir.Location = new System.Drawing.Point(150, 565);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(265, 99);
             this.btExcluir.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace WindowsFormsApp
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(141, 708);
+            this.btVoltar.Location = new System.Drawing.Point(150, 707);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(265, 54);
             this.btVoltar.TabIndex = 5;
@@ -107,6 +107,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 797);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btExcluir);
@@ -116,7 +117,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.label1);
             this.Name = "TelaTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaTarefa";
+            this.Text = "Controle de Tarefas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

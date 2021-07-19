@@ -32,9 +32,12 @@ namespace WindowsFormsApp.CompromissoModule
             this.btVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btExcluir = new System.Windows.Forms.Button();
-            this.txbId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assuntoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaTérminoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new System.Data.DataSet();
             this.dtCompromissos = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -43,12 +46,9 @@ namespace WindowsFormsApp.CompromissoModule
             this.dataColumn4 = new System.Data.DataColumn();
             this.dataColumn5 = new System.Data.DataColumn();
             this.dataColumn6 = new System.Data.DataColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assuntoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaTérminoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btExcluir = new System.Windows.Forms.Button();
+            this.txbId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCompromissos)).BeginInit();
@@ -94,76 +94,6 @@ namespace WindowsFormsApp.CompromissoModule
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1153, 339);
             this.dataGridView1.TabIndex = 14;
-            // 
-            // btExcluir
-            // 
-            this.btExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(471, 598);
-            this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(235, 85);
-            this.btExcluir.TabIndex = 17;
-            this.btExcluir.Text = "Excluir";
-            this.btExcluir.UseVisualStyleBackColor = true;
-            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
-            // 
-            // txbId
-            // 
-            this.txbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbId.Location = new System.Drawing.Point(666, 537);
-            this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(100, 30);
-            this.txbId.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(190, 542);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(411, 25);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Digite o ID do compromisso que deseja excluir";
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
-            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
-            this.dtCompromissos});
-            // 
-            // dtCompromissos
-            // 
-            this.dtCompromissos.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn1,
-            this.dataColumn2,
-            this.dataColumn3,
-            this.dataColumn4,
-            this.dataColumn5,
-            this.dataColumn6});
-            this.dtCompromissos.TableName = "dtCompromissos";
-            // 
-            // dataColumn1
-            // 
-            this.dataColumn1.ColumnName = "Id";
-            // 
-            // dataColumn2
-            // 
-            this.dataColumn2.ColumnName = "Assunto";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "Data";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "Hora Inicio";
-            // 
-            // dataColumn5
-            // 
-            this.dataColumn5.ColumnName = "Hora Término";
-            // 
-            // dataColumn6
-            // 
-            this.dataColumn6.ColumnName = "Contato";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -213,10 +143,81 @@ namespace WindowsFormsApp.CompromissoModule
             this.contatoDataGridViewTextBoxColumn.Name = "contatoDataGridViewTextBoxColumn";
             this.contatoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
+            this.dtCompromissos});
+            // 
+            // dtCompromissos
+            // 
+            this.dtCompromissos.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4,
+            this.dataColumn5,
+            this.dataColumn6});
+            this.dtCompromissos.TableName = "dtCompromissos";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "Id";
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "Assunto";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "Data";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "Hora Inicio";
+            // 
+            // dataColumn5
+            // 
+            this.dataColumn5.ColumnName = "Hora Término";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "Contato";
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExcluir.Location = new System.Drawing.Point(471, 598);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(291, 62);
+            this.btExcluir.TabIndex = 17;
+            this.btExcluir.Text = "Excluir";
+            this.btExcluir.UseVisualStyleBackColor = true;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // txbId
+            // 
+            this.txbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbId.Location = new System.Drawing.Point(666, 537);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(100, 30);
+            this.txbId.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(190, 542);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(411, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Digite o ID do compromisso que deseja excluir";
+            // 
             // TelaExcluirCompromisso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1177, 716);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.txbId);
@@ -225,7 +226,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.label1);
             this.Name = "TelaExcluirCompromisso";
-            this.Text = "TelaExcluirContato";
+            this.Text = "Exclui Compromisso";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCompromissos)).EndInit();

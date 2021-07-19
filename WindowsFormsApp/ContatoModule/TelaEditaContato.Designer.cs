@@ -47,7 +47,7 @@ namespace WindowsFormsApp.ContatoModule
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(257, 677);
+            this.btVoltar.Location = new System.Drawing.Point(243, 681);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(254, 58);
             this.btVoltar.TabIndex = 25;
@@ -58,9 +58,9 @@ namespace WindowsFormsApp.ContatoModule
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(225, 564);
+            this.btEditar.Location = new System.Drawing.Point(225, 580);
             this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(321, 75);
+            this.btEditar.Size = new System.Drawing.Size(291, 62);
             this.btEditar.TabIndex = 24;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@ namespace WindowsFormsApp.ContatoModule
             // txbEmpresa
             // 
             this.txbEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmpresa.Location = new System.Drawing.Point(299, 478);
+            this.txbEmpresa.Location = new System.Drawing.Point(284, 484);
             this.txbEmpresa.Name = "txbEmpresa";
             this.txbEmpresa.Size = new System.Drawing.Size(212, 30);
             this.txbEmpresa.TabIndex = 23;
@@ -78,7 +78,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(194, 483);
+            this.label6.Location = new System.Drawing.Point(179, 489);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 25);
             this.label6.TabIndex = 22;
@@ -87,7 +87,7 @@ namespace WindowsFormsApp.ContatoModule
             // txbCargo
             // 
             this.txbCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCargo.Location = new System.Drawing.Point(299, 388);
+            this.txbCargo.Location = new System.Drawing.Point(284, 394);
             this.txbCargo.Name = "txbCargo";
             this.txbCargo.Size = new System.Drawing.Size(212, 30);
             this.txbCargo.TabIndex = 21;
@@ -96,7 +96,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(220, 393);
+            this.label5.Location = new System.Drawing.Point(205, 399);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 25);
             this.label5.TabIndex = 20;
@@ -105,7 +105,7 @@ namespace WindowsFormsApp.ContatoModule
             // txbTelefone
             // 
             this.txbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTelefone.Location = new System.Drawing.Point(299, 300);
+            this.txbTelefone.Location = new System.Drawing.Point(284, 306);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(212, 30);
             this.txbTelefone.TabIndex = 19;
@@ -114,7 +114,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(191, 305);
+            this.label4.Location = new System.Drawing.Point(176, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 25);
             this.label4.TabIndex = 18;
@@ -123,7 +123,7 @@ namespace WindowsFormsApp.ContatoModule
             // txbEmail
             // 
             this.txbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmail.Location = new System.Drawing.Point(299, 218);
+            this.txbEmail.Location = new System.Drawing.Point(284, 224);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(212, 30);
             this.txbEmail.TabIndex = 17;
@@ -132,7 +132,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(220, 223);
+            this.label3.Location = new System.Drawing.Point(205, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 16;
@@ -141,7 +141,7 @@ namespace WindowsFormsApp.ContatoModule
             // txbNome
             // 
             this.txbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNome.Location = new System.Drawing.Point(299, 145);
+            this.txbNome.Location = new System.Drawing.Point(284, 151);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(212, 30);
             this.txbNome.TabIndex = 15;
@@ -150,7 +150,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(220, 150);
+            this.label2.Location = new System.Drawing.Point(205, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 25);
             this.label2.TabIndex = 14;
@@ -170,6 +170,7 @@ namespace WindowsFormsApp.ContatoModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(737, 776);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btEditar);
@@ -185,7 +186,7 @@ namespace WindowsFormsApp.ContatoModule
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TelaEditaContato";
-            this.Text = "TelaEditaContato";
+            this.Text = "Edita Contato";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -59,7 +59,7 @@ namespace WindowsFormsApp.CompromissoModule
             // maskedtbHoraTermino
             // 
             this.maskedtbHoraTermino.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedtbHoraTermino.Location = new System.Drawing.Point(416, 295);
+            this.maskedtbHoraTermino.Location = new System.Drawing.Point(386, 281);
             this.maskedtbHoraTermino.Mask = "00:00";
             this.maskedtbHoraTermino.Name = "maskedtbHoraTermino";
             this.maskedtbHoraTermino.Size = new System.Drawing.Size(85, 30);
@@ -69,7 +69,7 @@ namespace WindowsFormsApp.CompromissoModule
             // maskedtbHoraInicio
             // 
             this.maskedtbHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedtbHoraInicio.Location = new System.Drawing.Point(416, 247);
+            this.maskedtbHoraInicio.Location = new System.Drawing.Point(386, 233);
             this.maskedtbHoraInicio.Mask = "00:00";
             this.maskedtbHoraInicio.Name = "maskedtbHoraInicio";
             this.maskedtbHoraInicio.Size = new System.Drawing.Size(85, 30);
@@ -79,9 +79,9 @@ namespace WindowsFormsApp.CompromissoModule
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(850, 14);
+            this.btVoltar.Location = new System.Drawing.Point(844, 19);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(194, 61);
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
             this.btVoltar.TabIndex = 37;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.labe.AutoSize = true;
             this.labe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labe.Location = new System.Drawing.Point(279, 300);
+            this.labe.Location = new System.Drawing.Point(249, 286);
             this.labe.Name = "labe";
             this.labe.Size = new System.Drawing.Size(131, 25);
             this.labe.TabIndex = 36;
@@ -101,7 +101,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(280, 243);
+            this.label4.Location = new System.Drawing.Point(250, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 35;
@@ -112,7 +112,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.dtpDataCompromisso.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.dtpDataCompromisso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataCompromisso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataCompromisso.Location = new System.Drawing.Point(494, 175);
+            this.dtpDataCompromisso.Location = new System.Drawing.Point(464, 161);
             this.dtpDataCompromisso.Name = "dtpDataCompromisso";
             this.dtpDataCompromisso.Size = new System.Drawing.Size(236, 30);
             this.dtpDataCompromisso.TabIndex = 34;
@@ -121,7 +121,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(278, 180);
+            this.label3.Location = new System.Drawing.Point(248, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(179, 25);
             this.label3.TabIndex = 33;
@@ -131,7 +131,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(386, 39);
+            this.label1.Location = new System.Drawing.Point(356, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 36);
             this.label1.TabIndex = 32;
@@ -140,7 +140,7 @@ namespace WindowsFormsApp.CompromissoModule
             // txbAssunto
             // 
             this.txbAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbAssunto.Location = new System.Drawing.Point(370, 115);
+            this.txbAssunto.Location = new System.Drawing.Point(340, 101);
             this.txbAssunto.Name = "txbAssunto";
             this.txbAssunto.Size = new System.Drawing.Size(378, 30);
             this.txbAssunto.TabIndex = 31;
@@ -149,7 +149,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(280, 118);
+            this.label2.Location = new System.Drawing.Point(250, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 30;
@@ -159,7 +159,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(439, 447);
+            this.label5.Location = new System.Drawing.Point(434, 438);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 45;
@@ -170,7 +170,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.cmbContatos.Enabled = false;
             this.cmbContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbContatos.FormattingEnabled = true;
-            this.cmbContatos.Location = new System.Drawing.Point(379, 491);
+            this.cmbContatos.Location = new System.Drawing.Point(374, 482);
             this.cmbContatos.Name = "cmbContatos";
             this.cmbContatos.Size = new System.Drawing.Size(216, 33);
             this.cmbContatos.TabIndex = 44;
@@ -180,7 +180,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.gbLocal.Controls.Add(this.rdbPresencial);
             this.gbLocal.Controls.Add(this.rdbRemoto);
             this.gbLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbLocal.Location = new System.Drawing.Point(319, 562);
+            this.gbLocal.Location = new System.Drawing.Point(314, 553);
             this.gbLocal.Name = "gbLocal";
             this.gbLocal.Size = new System.Drawing.Size(445, 100);
             this.gbLocal.TabIndex = 43;
@@ -216,7 +216,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.gbContato.Controls.Add(this.rdbNao);
             this.gbContato.Controls.Add(this.rdbSim);
             this.gbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbContato.Location = new System.Drawing.Point(346, 344);
+            this.gbContato.Location = new System.Drawing.Point(341, 335);
             this.gbContato.Name = "gbContato";
             this.gbContato.Size = new System.Drawing.Size(332, 91);
             this.gbContato.TabIndex = 42;
@@ -226,7 +226,7 @@ namespace WindowsFormsApp.CompromissoModule
             // rdbNao
             // 
             this.rdbNao.AutoSize = true;
-            this.rdbNao.Location = new System.Drawing.Point(177, 42);
+            this.rdbNao.Location = new System.Drawing.Point(180, 42);
             this.rdbNao.Name = "rdbNao";
             this.rdbNao.Size = new System.Drawing.Size(69, 29);
             this.rdbNao.TabIndex = 14;
@@ -250,7 +250,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.txbLocal.Enabled = false;
             this.txbLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLocal.Location = new System.Drawing.Point(428, 706);
+            this.txbLocal.Location = new System.Drawing.Point(423, 697);
             this.txbLocal.Name = "txbLocal";
             this.txbLocal.Size = new System.Drawing.Size(250, 30);
             this.txbLocal.TabIndex = 41;
@@ -260,7 +260,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.labelLocal.AutoSize = true;
             this.labelLocal.Enabled = false;
             this.labelLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLocal.Location = new System.Drawing.Point(363, 706);
+            this.labelLocal.Location = new System.Drawing.Point(358, 697);
             this.labelLocal.Name = "labelLocal";
             this.labelLocal.Size = new System.Drawing.Size(59, 25);
             this.labelLocal.TabIndex = 40;
@@ -269,9 +269,9 @@ namespace WindowsFormsApp.CompromissoModule
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(379, 858);
+            this.btEditar.Location = new System.Drawing.Point(386, 820);
             this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(307, 80);
+            this.btEditar.Size = new System.Drawing.Size(291, 62);
             this.btEditar.TabIndex = 48;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.txbLink.Enabled = false;
             this.txbLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbLink.Location = new System.Drawing.Point(428, 768);
+            this.txbLink.Location = new System.Drawing.Point(423, 759);
             this.txbLink.Name = "txbLink";
             this.txbLink.Size = new System.Drawing.Size(250, 30);
             this.txbLink.TabIndex = 47;
@@ -291,7 +291,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.labelLink.AutoSize = true;
             this.labelLink.Enabled = false;
             this.labelLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLink.Location = new System.Drawing.Point(363, 771);
+            this.labelLink.Location = new System.Drawing.Point(358, 762);
             this.labelLink.Name = "labelLink";
             this.labelLink.Size = new System.Drawing.Size(48, 25);
             this.labelLink.TabIndex = 46;
@@ -302,6 +302,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1057, 1008);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbLink);
@@ -324,7 +325,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.Controls.Add(this.label2);
             this.Name = "TelaEditaCompromisso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaEditaCompromisso";
+            this.Text = "Edita Compromisso";
             this.gbLocal.ResumeLayout(false);
             this.gbLocal.PerformLayout();
             this.gbContato.ResumeLayout(false);

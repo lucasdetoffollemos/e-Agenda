@@ -32,9 +32,12 @@ namespace WindowsFormsApp.CompromissoModule
             this.btVoltar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.txbId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assuntoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaTérminoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new System.Data.DataSet();
             this.dtCompromissos = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -43,12 +46,9 @@ namespace WindowsFormsApp.CompromissoModule
             this.dataColumn4 = new System.Data.DataColumn();
             this.dataColumn5 = new System.Data.DataColumn();
             this.dataColumn6 = new System.Data.DataColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assuntoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaTérminoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btEditar = new System.Windows.Forms.Button();
+            this.txbId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCompromissos)).BeginInit();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVoltar.Location = new System.Drawing.Point(957, 23);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(204, 53);
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
             this.btVoltar.TabIndex = 6;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -68,10 +68,10 @@ namespace WindowsFormsApp.CompromissoModule
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(423, 116);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(422, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 36);
+            this.label1.Size = new System.Drawing.Size(365, 36);
             this.label1.TabIndex = 5;
             this.label1.Text = "Todos os Compromissos";
             // 
@@ -94,76 +94,6 @@ namespace WindowsFormsApp.CompromissoModule
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1152, 350);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // btEditar
-            // 
-            this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(498, 636);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(171, 46);
-            this.btEditar.TabIndex = 11;
-            this.btEditar.Text = "Editar";
-            this.btEditar.UseVisualStyleBackColor = true;
-            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
-            // 
-            // txbId
-            // 
-            this.txbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbId.Location = new System.Drawing.Point(607, 571);
-            this.txbId.Name = "txbId";
-            this.txbId.Size = new System.Drawing.Size(100, 30);
-            this.txbId.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(168, 574);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Digite o ID do compromisso que deseja editar";
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "NewDataSet";
-            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
-            this.dtCompromissos});
-            // 
-            // dtCompromissos
-            // 
-            this.dtCompromissos.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn1,
-            this.dataColumn2,
-            this.dataColumn3,
-            this.dataColumn4,
-            this.dataColumn5,
-            this.dataColumn6});
-            this.dtCompromissos.TableName = "dtCompromissos";
-            // 
-            // dataColumn1
-            // 
-            this.dataColumn1.ColumnName = "Id";
-            // 
-            // dataColumn2
-            // 
-            this.dataColumn2.ColumnName = "Assunto";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "Data";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "Hora Inicio";
-            // 
-            // dataColumn5
-            // 
-            this.dataColumn5.ColumnName = "Hora Término";
-            // 
-            // dataColumn6
-            // 
-            this.dataColumn6.ColumnName = "Contato";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -213,10 +143,81 @@ namespace WindowsFormsApp.CompromissoModule
             this.contatoDataGridViewTextBoxColumn.Name = "contatoDataGridViewTextBoxColumn";
             this.contatoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
+            this.dataSet1.Tables.AddRange(new System.Data.DataTable[] {
+            this.dtCompromissos});
+            // 
+            // dtCompromissos
+            // 
+            this.dtCompromissos.Columns.AddRange(new System.Data.DataColumn[] {
+            this.dataColumn1,
+            this.dataColumn2,
+            this.dataColumn3,
+            this.dataColumn4,
+            this.dataColumn5,
+            this.dataColumn6});
+            this.dtCompromissos.TableName = "dtCompromissos";
+            // 
+            // dataColumn1
+            // 
+            this.dataColumn1.ColumnName = "Id";
+            // 
+            // dataColumn2
+            // 
+            this.dataColumn2.ColumnName = "Assunto";
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "Data";
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "Hora Inicio";
+            // 
+            // dataColumn5
+            // 
+            this.dataColumn5.ColumnName = "Hora Término";
+            // 
+            // dataColumn6
+            // 
+            this.dataColumn6.ColumnName = "Contato";
+            // 
+            // btEditar
+            // 
+            this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditar.Location = new System.Drawing.Point(498, 636);
+            this.btEditar.Name = "btEditar";
+            this.btEditar.Size = new System.Drawing.Size(171, 46);
+            this.btEditar.TabIndex = 11;
+            this.btEditar.Text = "Editar";
+            this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
+            // 
+            // txbId
+            // 
+            this.txbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbId.Location = new System.Drawing.Point(607, 571);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(100, 30);
+            this.txbId.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(168, 574);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(403, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Digite o ID do compromisso que deseja editar";
+            // 
             // VisualizarCompromissoParaEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1176, 709);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbId);
@@ -226,7 +227,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.Controls.Add(this.label1);
             this.Name = "VisualizarCompromissoParaEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VisualizarCompromissoParaEditar";
+            this.Text = "Visualizando para editar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtCompromissos)).EndInit();

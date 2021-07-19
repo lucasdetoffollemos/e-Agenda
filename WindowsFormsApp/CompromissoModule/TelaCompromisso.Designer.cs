@@ -41,7 +41,7 @@ namespace WindowsFormsApp.CompromissoModule
             // btVoltar
             // 
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(134, 827);
+            this.btVoltar.Location = new System.Drawing.Point(134, 768);
             this.btVoltar.Name = "btVoltar";
             this.btVoltar.Size = new System.Drawing.Size(265, 54);
             this.btVoltar.TabIndex = 17;
@@ -52,7 +52,7 @@ namespace WindowsFormsApp.CompromissoModule
             // btExcluir
             // 
             this.btExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(134, 684);
+            this.btExcluir.Location = new System.Drawing.Point(134, 631);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(265, 99);
             this.btExcluir.TabIndex = 16;
@@ -63,7 +63,7 @@ namespace WindowsFormsApp.CompromissoModule
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(134, 536);
+            this.btEditar.Location = new System.Drawing.Point(134, 498);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(265, 99);
             this.btEditar.TabIndex = 15;
@@ -74,7 +74,7 @@ namespace WindowsFormsApp.CompromissoModule
             // btVisualizarPassados
             // 
             this.btVisualizarPassados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVisualizarPassados.Location = new System.Drawing.Point(134, 253);
+            this.btVisualizarPassados.Location = new System.Drawing.Point(134, 238);
             this.btVisualizarPassados.Name = "btVisualizarPassados";
             this.btVisualizarPassados.Size = new System.Drawing.Size(265, 99);
             this.btVisualizarPassados.TabIndex = 14;
@@ -97,7 +97,7 @@ namespace WindowsFormsApp.CompromissoModule
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 30);
+            this.label1.Location = new System.Drawing.Point(68, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(405, 36);
             this.label1.TabIndex = 12;
@@ -106,7 +106,7 @@ namespace WindowsFormsApp.CompromissoModule
             // btVisualizarFuturo
             // 
             this.btVisualizarFuturo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVisualizarFuturo.Location = new System.Drawing.Point(134, 392);
+            this.btVisualizarFuturo.Location = new System.Drawing.Point(134, 367);
             this.btVisualizarFuturo.Name = "btVisualizarFuturo";
             this.btVisualizarFuturo.Size = new System.Drawing.Size(265, 99);
             this.btVisualizarFuturo.TabIndex = 18;
@@ -119,7 +119,8 @@ namespace WindowsFormsApp.CompromissoModule
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(548, 893);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(548, 864);
             this.Controls.Add(this.btVisualizarFuturo);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btExcluir);
@@ -129,7 +130,7 @@ namespace WindowsFormsApp.CompromissoModule
             this.Controls.Add(this.label1);
             this.Name = "TelaCompromisso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaCompromisso";
+            this.Text = "Controle de Compromissos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

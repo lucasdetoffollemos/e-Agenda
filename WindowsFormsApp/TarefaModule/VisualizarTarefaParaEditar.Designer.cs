@@ -179,7 +179,7 @@ namespace WindowsFormsApp
             this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btVoltar.Location = new System.Drawing.Point(906, 35);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(204, 53);
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
             this.btVoltar.TabIndex = 2;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -207,9 +207,9 @@ namespace WindowsFormsApp
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditar.Location = new System.Drawing.Point(471, 579);
+            this.btEditar.Location = new System.Drawing.Point(437, 578);
             this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(171, 46);
+            this.btEditar.Size = new System.Drawing.Size(291, 62);
             this.btEditar.TabIndex = 5;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
@@ -219,6 +219,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1123, 652);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbId);
@@ -228,7 +229,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.label1);
             this.Name = "VisualizarTarefaParaEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VisualizarTarefaParaEditar";
+            this.Text = "Visualizando para editar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTarefas)).EndInit();

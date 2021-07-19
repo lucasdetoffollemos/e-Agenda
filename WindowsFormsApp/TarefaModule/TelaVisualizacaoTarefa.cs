@@ -55,7 +55,7 @@ namespace WindowsFormsApp
 
                 tarefa["Id"] = item.Id;
                 tarefa["Titulo"] = item.Titulo;
-                tarefa["Data criação"] = item.DataCriacao;
+                tarefa["Data criação"] = item.DataCriacao.ToString("dd/MM/yyyy");
                 tarefa["Percentual"] = item.Percentual;
                 tarefa["Prioridade"] = item.Prioridade;
                 tarefa["Data conclusão"] = item.DataConclusao;

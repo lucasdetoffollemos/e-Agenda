@@ -36,7 +36,7 @@ namespace WindowsFormsApp
 
                 linha["Id"] = item.Id;
                 linha["Titulo"] = item.Titulo;
-                linha["Data Criação"] = item.DataCriacao;
+                linha["Data Criação"] = item.DataCriacao.ToString("dd/MM/yyyy");
                 linha["Percentual %"] = item.Percentual;
                 linha["Prioridade"] = item.Prioridade;
                 linha["Data Conclusão"] = item.DataConclusao;
@@ -85,6 +85,11 @@ namespace WindowsFormsApp
         }
 
         private void txbId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

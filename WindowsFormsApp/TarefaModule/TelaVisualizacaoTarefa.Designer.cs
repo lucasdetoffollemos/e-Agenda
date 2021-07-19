@@ -33,6 +33,12 @@ namespace WindowsFormsApp
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataCriaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percentualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prioridadeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataConclusãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1 = new System.Data.DataSet();
             this.dtTarefasPendentes = new System.Data.DataTable();
             this.dataColumn1 = new System.Data.DataColumn();
@@ -50,19 +56,13 @@ namespace WindowsFormsApp
             this.dataColumn12 = new System.Data.DataColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btVoltar = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataCriaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.percentualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prioridadeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataConclusãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataCriaçãoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.percentualDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prioridadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataConclusãoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btVoltar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -125,6 +125,54 @@ namespace WindowsFormsApp
             this.dataGridView1.Size = new System.Drawing.Size(1058, 262);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataCriaçãoDataGridViewTextBoxColumn
+            // 
+            this.dataCriaçãoDataGridViewTextBoxColumn.DataPropertyName = "Data criação";
+            this.dataCriaçãoDataGridViewTextBoxColumn.HeaderText = "Data criação";
+            this.dataCriaçãoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataCriaçãoDataGridViewTextBoxColumn.Name = "dataCriaçãoDataGridViewTextBoxColumn";
+            this.dataCriaçãoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // percentualDataGridViewTextBoxColumn
+            // 
+            this.percentualDataGridViewTextBoxColumn.DataPropertyName = "Percentual";
+            this.percentualDataGridViewTextBoxColumn.HeaderText = "Percentual";
+            this.percentualDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.percentualDataGridViewTextBoxColumn.Name = "percentualDataGridViewTextBoxColumn";
+            this.percentualDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // prioridadeDataGridViewTextBoxColumn1
+            // 
+            this.prioridadeDataGridViewTextBoxColumn1.DataPropertyName = "Prioridade";
+            this.prioridadeDataGridViewTextBoxColumn1.HeaderText = "Prioridade";
+            this.prioridadeDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.prioridadeDataGridViewTextBoxColumn1.Name = "prioridadeDataGridViewTextBoxColumn1";
+            this.prioridadeDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataConclusãoDataGridViewTextBoxColumn
+            // 
+            this.dataConclusãoDataGridViewTextBoxColumn.DataPropertyName = "Data conclusão";
+            this.dataConclusãoDataGridViewTextBoxColumn.HeaderText = "Data conclusão";
+            this.dataConclusãoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataConclusãoDataGridViewTextBoxColumn.Name = "dataConclusãoDataGridViewTextBoxColumn";
+            this.dataConclusãoDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataSet1
             // 
@@ -239,65 +287,6 @@ namespace WindowsFormsApp
             this.dataGridView2.Size = new System.Drawing.Size(1058, 262);
             this.dataGridView2.TabIndex = 1;
             // 
-            // btVoltar
-            // 
-            this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btVoltar.Location = new System.Drawing.Point(840, 24);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(222, 54);
-            this.btVoltar.TabIndex = 2;
-            this.btVoltar.Text = "Voltar";
-            this.btVoltar.UseVisualStyleBackColor = true;
-            this.btVoltar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tituloDataGridViewTextBoxColumn
-            // 
-            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
-            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
-            this.tituloDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataCriaçãoDataGridViewTextBoxColumn
-            // 
-            this.dataCriaçãoDataGridViewTextBoxColumn.DataPropertyName = "Data criação";
-            this.dataCriaçãoDataGridViewTextBoxColumn.HeaderText = "Data criação";
-            this.dataCriaçãoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataCriaçãoDataGridViewTextBoxColumn.Name = "dataCriaçãoDataGridViewTextBoxColumn";
-            this.dataCriaçãoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // percentualDataGridViewTextBoxColumn
-            // 
-            this.percentualDataGridViewTextBoxColumn.DataPropertyName = "Percentual";
-            this.percentualDataGridViewTextBoxColumn.HeaderText = "Percentual";
-            this.percentualDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.percentualDataGridViewTextBoxColumn.Name = "percentualDataGridViewTextBoxColumn";
-            this.percentualDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // prioridadeDataGridViewTextBoxColumn1
-            // 
-            this.prioridadeDataGridViewTextBoxColumn1.DataPropertyName = "Prioridade";
-            this.prioridadeDataGridViewTextBoxColumn1.HeaderText = "Prioridade";
-            this.prioridadeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.prioridadeDataGridViewTextBoxColumn1.Name = "prioridadeDataGridViewTextBoxColumn1";
-            this.prioridadeDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataConclusãoDataGridViewTextBoxColumn
-            // 
-            this.dataConclusãoDataGridViewTextBoxColumn.DataPropertyName = "Data conclusão";
-            this.dataConclusãoDataGridViewTextBoxColumn.HeaderText = "Data conclusão";
-            this.dataConclusãoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataConclusãoDataGridViewTextBoxColumn.Name = "dataConclusãoDataGridViewTextBoxColumn";
-            this.dataConclusãoDataGridViewTextBoxColumn.Width = 125;
-            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -346,17 +335,29 @@ namespace WindowsFormsApp
             this.dataConclusãoDataGridViewTextBoxColumn1.Name = "dataConclusãoDataGridViewTextBoxColumn1";
             this.dataConclusãoDataGridViewTextBoxColumn1.Width = 125;
             // 
+            // btVoltar
+            // 
+            this.btVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVoltar.Location = new System.Drawing.Point(840, 24);
+            this.btVoltar.Name = "btVoltar";
+            this.btVoltar.Size = new System.Drawing.Size(201, 55);
+            this.btVoltar.TabIndex = 2;
+            this.btVoltar.Text = "Voltar";
+            this.btVoltar.UseVisualStyleBackColor = true;
+            this.btVoltar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TelaVisualizacaoTarefa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1089, 504);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "TelaVisualizacaoTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaVisualizacaoTarefa";
+            this.Text = "Visualizando Tarefas";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

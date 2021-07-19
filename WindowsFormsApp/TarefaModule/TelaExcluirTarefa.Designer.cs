@@ -58,11 +58,12 @@ namespace WindowsFormsApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(353, 70);
+            this.label1.Location = new System.Drawing.Point(434, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(212, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Excluir Tarefa";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txbId
             // 
@@ -208,9 +209,9 @@ namespace WindowsFormsApp
             // btExcluir
             // 
             this.btExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExcluir.Location = new System.Drawing.Point(408, 588);
+            this.btExcluir.Location = new System.Drawing.Point(397, 605);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(235, 85);
+            this.btExcluir.Size = new System.Drawing.Size(291, 62);
             this.btExcluir.TabIndex = 10;
             this.btExcluir.Text = "Excluir";
             this.btExcluir.UseVisualStyleBackColor = true;
@@ -220,6 +221,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1057, 709);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btVoltar);
@@ -229,7 +231,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.label1);
             this.Name = "TelaExcluirTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaExcluirTarefa";
+            this.Text = "Excluir Tarefa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtTarefas)).EndInit();
