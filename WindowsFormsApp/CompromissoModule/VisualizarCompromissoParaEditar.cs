@@ -30,19 +30,28 @@ namespace WindowsFormsApp.CompromissoModule
 
             List<Compromisso> compromissos = controlador.SelecionarTodos();
 
-            foreach(var item in compromissos)
+            if(compromissos.Count == 0)
             {
-                DataRow linha = dtCompromissos.NewRow();
-
-                linha["Id"] = item.Id;
-                linha["Assunto"] = item.Assunto;
-                linha["Data"] = item.Data;
-                linha["Hora Inicio"] = item.HoraInicio;
-                linha["Hora Término"] = item.HoraTermino;
-                linha["Contato"] = item.Contato;
-
-                dtCompromissos.Rows.Add(linha);
+                MessageBox.Show("Nenhum compromisso encontrado.");
             }
+            else
+            {
+                foreach (var item in compromissos)
+                {
+                    DataRow linha = dtCompromissos.NewRow();
+
+                    linha["Id"] = item.Id;
+                    linha["Assunto"] = item.Assunto;
+                    linha["Data"] = item.Data.ToString("dd/MM/yyyy");
+                    linha["Hora Inicio"] = item.HoraInicio;
+                    linha["Hora Término"] = item.HoraTermino;
+                    linha["Contato"] = item.Contato;
+
+                    dtCompromissos.Rows.Add(linha);
+                }
+            }
+
+           
         }
 
         private void btVoltar_Click(object sender, EventArgs e)

@@ -18,6 +18,14 @@ namespace WindowsFormsApp.CompromissoModule
         public TelaVisualizacaoCompromissosFuturos()
         {
             InitializeComponent();
+
+            setaDataMinimaDateTimePicker();
+        }
+
+        private void setaDataMinimaDateTimePicker()
+        {
+            dtpDataInicio.MinDate = DateTime.Now;
+            dtpDataFim.MinDate = DateTime.Now;
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
@@ -28,32 +36,50 @@ namespace WindowsFormsApp.CompromissoModule
 
         private void btFiltrar_Click(object sender, EventArgs e)
         {
-            CarregarCompromissosFuturos();
+            if(dtpDataInicio.Value.Date > dtpDataFim.Value.Date)
+            {
+                MessageBox.Show("Data inicial nao pode ser maior que a data final.");
+            }
+
+            else
+            {
+                CarregarCompromissosFuturos();
+            } 
         }
 
         private void CarregarCompromissosFuturos()
         {
             DateTime dataInicio, dataFim;
-            dataInicio = dtpDataInicio.Value;
+            dataInicio = dtpDataInicio.Value.Date;
             dataFim = dtpDataFim.Value;
 
             dtCompromissosFuturos.Rows.Clear();
 
             List<Compromisso> compromissosFuturos = controlador.SelecionarCompromissosFuturos(dataInicio, dataFim);
 
-            foreach(var item in compromissosFuturos)
+            if(compromissosFuturos.Count == 0)
             {
-                DataRow linha = dtCompromissosFuturos.NewRow();
-
-                linha["Id"] = item.Id;
-                linha["Assunto"] = item.Assunto;
-                linha["Data"] = item.Data;
-                linha["Hora Inicio"] = item.HoraInicio;
-                linha["Hora Término"] = item.HoraTermino;
-                linha["Contato"] = item.Contato;
-
-                dtCompromissosFuturos.Rows.Add(linha);
+                MessageBox.Show("Nenhum compromisso encontrado.");
             }
+            else
+            {
+                foreach (var item in compromissosFuturos)
+                {
+                    DataRow linha = dtCompromissosFuturos.NewRow();
+
+                    linha["Id"] = item.Id;
+                    linha["Assunto"] = item.Assunto;
+                    linha["Data"] = item.Data.ToString("dd/MM/yyyy");
+                    linha["Hora Inicio"] = item.HoraInicio;
+                    linha["Hora Término"] = item.HoraTermino;
+                    linha["Contato"] = item.Contato;
+
+                    dtCompromissosFuturos.Rows.Add(linha);
+                }
+            }
+
+
+            
         }
     }
 }

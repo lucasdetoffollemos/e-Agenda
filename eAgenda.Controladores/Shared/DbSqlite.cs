@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace eAgenda.Controladores.Shared
 {
-    
+
     public static class DbSqlite
     {
 
@@ -19,14 +19,15 @@ namespace eAgenda.Controladores.Shared
         public static int Insert(string sql, Dictionary<string, object> parameters)
         {
 
-            using (IDbConnection cnn = new  SQLiteConnection(Db.connectionString)) {
+            using (IDbConnection cnn = new SQLiteConnection(Db.connectionString))
+            {
 
 
                 cnn.Open();
                 using (SQLiteCommand cmd = new SQLiteCommand(sql.AppendSelectIdentitySqlite(), (SQLiteConnection)cnn))
                 {
                     cmd.SetParameters(parameters);
-                   
+
                     int id = Convert.ToInt32(cmd.ExecuteScalar());
 
                     cnn.Close();
@@ -40,7 +41,7 @@ namespace eAgenda.Controladores.Shared
 
             using (IDbConnection cnn = new SQLiteConnection(Db.connectionString))
             {
-                
+
                 SQLiteCommand comand = new SQLiteCommand(sql, (SQLiteConnection)cnn);
                 comand.SetParameters(parameters);
 
@@ -104,7 +105,7 @@ namespace eAgenda.Controladores.Shared
                 return t;
 
             }
-           
+
         }
 
         public static bool Exists(string sql, Dictionary<string, object> parameters)
@@ -124,21 +125,21 @@ namespace eAgenda.Controladores.Shared
         }
 
         private static void SetParameters(this SQLiteCommand command, Dictionary<string, object> parameters)
+        {
+            if (parameters == null || parameters.Count == 0)
+                return;
+
+            foreach (var parameter in parameters)
             {
-                if (parameters == null || parameters.Count == 0)
-                    return;
+                string name = parameter.Key;
 
-                foreach (var parameter in parameters)
-                {
-                    string name = parameter.Key;
+                object value = parameter.Value.IsNullOrEmpty() ? DBNull.Value : parameter.Value;
 
-                    object value = parameter.Value.IsNullOrEmpty() ? DBNull.Value : parameter.Value;
+                SQLiteParameter dbParameter = new SQLiteParameter(name, value);
 
-                    SQLiteParameter dbParameter = new SQLiteParameter(name, value);
-
-                    command.Parameters.Add(dbParameter);
-                }
+                command.Parameters.Add(dbParameter);
             }
+        }
 
         private static string AppendSelectIdentitySqlite(this string sql)
         {
@@ -146,11 +147,11 @@ namespace eAgenda.Controladores.Shared
         }
 
         private static bool IsNullOrEmpty(this object value)
-            {
-                return (value is string && string.IsNullOrEmpty((string)value)) ||
-                        value == null;
-            }
-
+        {
+            return (value is string && string.IsNullOrEmpty((string)value)) ||
+                    value == null;
         }
-    
+
+    }
+
 }

@@ -155,9 +155,9 @@ namespace eAgenda.Controladores.CompromissoModule
             WHERE 
                 [DATA] = @DATA 
             AND 
-                @HORA_INICIO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO 
+               (@HORA_INICIO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO 
             OR 
-                @HORA_TERMINO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO";
+                @HORA_TERMINO_DESEJADO BETWEEN HORAINICIO AND HORATERMINO)";
 
         #endregion
 
@@ -243,7 +243,6 @@ namespace eAgenda.Controladores.CompromissoModule
             var parametros = new Dictionary<string, object>();
 
             parametros.Add("DATA", data);
-
             parametros.Add("HORA_INICIO_DESEJADO", horaInicioDesejado.Ticks);
             parametros.Add("HORA_TERMINO_DESEJADO", horaTerminoDesejado.Ticks);
 

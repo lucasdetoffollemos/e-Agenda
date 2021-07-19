@@ -43,7 +43,29 @@ namespace eAgenda.Tests.CompromissoModule
             var contatoEncontrado = controladorCompromisso.SelecionarPorId(novoCompromisso.Id);
             contatoEncontrado.Should().Be(novoCompromisso);
         }
-       
+
+        [TestMethod]
+        public void DeveInserir_CompromissosComDatasDiferentesEhorarioIguais()
+        {
+            //arrange
+            Compromisso c1 = new Compromisso("Montar plano de Marketing", "Padaria", "",
+                DateTime.Today, new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null);
+            
+            controladorCompromisso.InserirNovo(c1);
+
+            //action
+
+            Compromisso c2 = new Compromisso("Comprar maça", "Padaria", "",
+                new DateTime(2021, 07, 04), new TimeSpan(13, 00, 00), new TimeSpan(14, 00, 00), null);
+
+            string resultado = controladorCompromisso.InserirNovo(c2);
+
+
+            //assert
+           
+            resultado.Should().Be("ESTA_VALIDO");
+        }
+
         [TestMethod]
         public void DeveAtualizar_Compromisso()
         {

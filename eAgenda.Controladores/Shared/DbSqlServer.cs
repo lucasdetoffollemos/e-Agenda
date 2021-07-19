@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace eAgenda.Controladores.Shared
 {
-    
+
     public static class DbSqlServer
     {
 

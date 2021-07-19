@@ -84,8 +84,6 @@ namespace WindowsFormsApp.CompromissoModule
             string assunto, local = null, link = null;
             DateTime dataCompromisso;
 
-
-
             assunto = txbAssunto.Text;
 
             dataCompromisso = dtpDataCompromisso.Value;

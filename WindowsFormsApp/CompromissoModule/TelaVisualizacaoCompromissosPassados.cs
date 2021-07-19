@@ -27,20 +27,34 @@ namespace WindowsFormsApp.CompromissoModule
 
             List<Compromisso> compromissosPassados = controlador.SelecionarCompromissosPassados(DateTime.Now.Date);
 
-            foreach (var item in compromissosPassados){
-
-                DataRow linha = dtCompromissosPassasdos.NewRow();
-
-                linha["Id"] = item.Id;
-                linha["Assunto"] = item.Assunto;
-                linha["Data"] = item.Data;
-                linha["Hora Inicio"] = item.HoraInicio;
-                linha["Hora Término"] = item.HoraTermino;
-                linha["Contato"] = item.Contato;
-
-                dtCompromissosPassasdos.Rows.Add(linha);
-
+            if(compromissosPassados.Count == 0)
+            {
+                if (compromissosPassados.Count == 0)
+                {
+                    MessageBox.Show("Nenhum compromisso encontrado.");
+                }
             }
+            else
+            {
+                foreach (var item in compromissosPassados)
+                {
+
+                    DataRow linha = dtCompromissosPassasdos.NewRow();
+
+                    linha["Id"] = item.Id;
+                    linha["Assunto"] = item.Assunto;
+                    linha["Data"] = item.Data.ToString("dd/MM/yyyy");
+                    linha["Hora Inicio"] = item.HoraInicio;
+                    linha["Hora Término"] = item.HoraTermino;
+                    linha["Contato"] = item.Contato;
+
+                    dtCompromissosPassasdos.Rows.Add(linha);
+
+                }
+            }
+
+
+            
         }
 
         private void btVoltar_Click(object sender, EventArgs e)
