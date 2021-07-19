@@ -37,23 +37,33 @@ namespace WindowsFormsApp
             string titulo = txbTitulo.Text;
             int prioridade = cmbPrioridade.SelectedIndex;
 
-            Tarefa t = new Tarefa(titulo, DateTime.Now.Date, (PrioridadeEnum)prioridade);
-            
-            string resultado = controlador.InserirNovo(t);
-
-            if (resultado.Equals("ESTA_VALIDO"))
+            if (string.IsNullOrEmpty(titulo) || prioridade == -1)
             {
-                MessageBox.Show("Tarefa inserida com sucesso.");
-                this.Close();
-                this.Dispose();
+                MessageBox.Show("Preencha todos os campos");
             }
             else
             {
-                MessageBox.Show(resultado);
+                Tarefa t = new Tarefa(titulo, DateTime.Now.Date, (PrioridadeEnum)prioridade);
+
+                string resultado = controlador.InserirNovo(t);
+
+                if (resultado.Equals("ESTA_VALIDO"))
+                {
+                    MessageBox.Show("Tarefa inserida com sucesso.");
+                    this.Close();
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show(resultado);
+                }
+
+                txbTitulo.Text = "";
+                cmbPrioridade.SelectedIndex = 0;
+
             }
 
-            txbTitulo.Text = "";
-            cmbPrioridade.SelectedIndex = 0;
+           
 
         }
     }

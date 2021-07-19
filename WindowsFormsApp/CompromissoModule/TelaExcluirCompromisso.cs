@@ -65,18 +65,28 @@ namespace WindowsFormsApp.CompromissoModule
             {
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
+                bool existeCompromisso = controlador.Existe(id);
 
-                bool foiExcluido = controlador.Excluir(id);
-
-                if (foiExcluido)
+                if (existeCompromisso)
                 {
-                    MessageBox.Show("Compromisso excluido com sucesso");
-                    CarregaCompromissos();
+                    bool foiExcluido = controlador.Excluir(id);
+
+                    if (foiExcluido)
+                    {
+                        MessageBox.Show("Compromisso excluido com sucesso");
+                        CarregaCompromissos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Problema ao excluir o contato");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Problema ao excluir o contato");
+                    MessageBox.Show("Id não encontrado, tente novamente");
                 }
+
+               
             }
         }
     }

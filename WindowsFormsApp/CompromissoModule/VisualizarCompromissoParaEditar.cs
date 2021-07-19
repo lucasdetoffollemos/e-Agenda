@@ -70,13 +70,24 @@ namespace WindowsFormsApp.CompromissoModule
             {
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
-                Compromisso c = pegarOCompromissoASerEditado(id);
+                bool existeCompromisso = controlador.Existe(id);
 
-                this.Hide();
-                TelaEditaCompromisso telaSelecionada = new TelaEditaCompromisso(c);
-                telaSelecionada.Closed += (s, args) => this.Show();
-                telaSelecionada.Closed += (s, args) => CarregaCompromissos();
-                telaSelecionada.Show();
+                if (existeCompromisso)
+                {
+                    Compromisso c = pegarOCompromissoASerEditado(id);
+
+                    this.Hide();
+                    TelaEditaCompromisso telaSelecionada = new TelaEditaCompromisso(c);
+                    telaSelecionada.Closed += (s, args) => this.Show();
+                    telaSelecionada.Closed += (s, args) => CarregaCompromissos();
+                    telaSelecionada.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Id não encontrado, tente novamente");
+                }
+
+                
 
 
             }

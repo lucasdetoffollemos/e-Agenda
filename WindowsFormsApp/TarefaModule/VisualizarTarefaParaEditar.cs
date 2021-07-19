@@ -18,16 +18,16 @@ namespace WindowsFormsApp
         public VisualizarTarefaParaEditar()
         {
             InitializeComponent();
-            CarregarTodasAsTarefas();
+            CarregarTarefasPendentes();
         }
 
-        private void CarregarTodasAsTarefas()
+        private void CarregarTarefasPendentes()
         {
             dtTarefas.Rows.Clear();
 
-            List<Tarefa> tarefas = controlador.SelecionarTodos();
+            List<Tarefa> tarefasPendentes = controlador.SelecionarTodasTarefasPendentes();
             
-            foreach(var item in tarefas)
+            foreach(var item in tarefasPendentes)
             {
                 DataRow linha = dtTarefas.NewRow();
 
@@ -62,14 +62,24 @@ namespace WindowsFormsApp
             {
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
-                Tarefa t = pegarATarefaASerEditada(id);
+                bool existeId = controlador.Existe(id);
 
-                this.Hide();
-                TelaEditaTarefa telaSelecionada = new TelaEditaTarefa(t);
-                telaSelecionada.Closed += (s, args) => this.Show();
-                telaSelecionada.Closed += (s, args) => CarregarTodasAsTarefas();
-                telaSelecionada.Show();
+                if (existeId)
+                {
+                    Tarefa t = pegarATarefaASerEditada(id);
 
+                    this.Hide();
+                    TelaEditaTarefa telaSelecionada = new TelaEditaTarefa(t);
+                    telaSelecionada.Closed += (s, args) => this.Show();
+                    telaSelecionada.Closed += (s, args) => CarregarTarefasPendentes();
+                    telaSelecionada.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Id não encontrado, tente novamente.");
+                }
+
+                txbId.Text = "";
 
             }
         }

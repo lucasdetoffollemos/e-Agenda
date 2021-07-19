@@ -34,7 +34,6 @@ namespace WindowsFormsApp.ContatoModule
             this.txbNome = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbTelefone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbCargo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@ namespace WindowsFormsApp.ContatoModule
             this.label6 = new System.Windows.Forms.Label();
             this.btInsere = new System.Windows.Forms.Button();
             this.btVoltar = new System.Windows.Forms.Button();
+            this.txbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -94,15 +94,6 @@ namespace WindowsFormsApp.ContatoModule
             this.label3.TabIndex = 3;
             this.label3.Text = "Email";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // txbTelefone
-            // 
-            this.txbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTelefone.Location = new System.Drawing.Point(206, 341);
-            this.txbTelefone.Name = "txbTelefone";
-            this.txbTelefone.Size = new System.Drawing.Size(212, 30);
-            this.txbTelefone.TabIndex = 6;
-            this.txbTelefone.TextChanged += new System.EventHandler(this.txbTelefone_TextChanged);
             // 
             // label4
             // 
@@ -177,19 +168,28 @@ namespace WindowsFormsApp.ContatoModule
             this.btVoltar.UseVisualStyleBackColor = true;
             this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
+            // txbTelefone
+            // 
+            this.txbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTelefone.Location = new System.Drawing.Point(206, 341);
+            this.txbTelefone.Mask = "(99)00000-0000";
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(212, 30);
+            this.txbTelefone.TabIndex = 13;
+            // 
             // TelaInsereContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(636, 810);
+            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btInsere);
             this.Controls.Add(this.txbEmpresa);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txbCargo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.label3);
@@ -212,7 +212,6 @@ namespace WindowsFormsApp.ContatoModule
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbCargo;
         private System.Windows.Forms.Label label5;
@@ -220,5 +219,6 @@ namespace WindowsFormsApp.ContatoModule
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btInsere;
         private System.Windows.Forms.Button btVoltar;
+        private System.Windows.Forms.MaskedTextBox txbTelefone;
     }
 }

@@ -35,13 +35,13 @@ namespace WindowsFormsApp.ContatoModule
             this.label6 = new System.Windows.Forms.Label();
             this.txbCargo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txbTelefone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btVoltar
@@ -102,14 +102,6 @@ namespace WindowsFormsApp.ContatoModule
             this.label5.TabIndex = 20;
             this.label5.Text = "Cargo";
             // 
-            // txbTelefone
-            // 
-            this.txbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTelefone.Location = new System.Drawing.Point(284, 306);
-            this.txbTelefone.Name = "txbTelefone";
-            this.txbTelefone.Size = new System.Drawing.Size(212, 30);
-            this.txbTelefone.TabIndex = 19;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -166,19 +158,28 @@ namespace WindowsFormsApp.ContatoModule
             this.label1.TabIndex = 13;
             this.label1.Text = "Editar Contato";
             // 
+            // txbTelefone
+            // 
+            this.txbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTelefone.Location = new System.Drawing.Point(285, 306);
+            this.txbTelefone.Mask = "(99)00000-0000";
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(212, 30);
+            this.txbTelefone.TabIndex = 26;
+            // 
             // TelaEditaContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(737, 776);
+            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbEmpresa);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txbCargo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.label3);
@@ -200,12 +201,12 @@ namespace WindowsFormsApp.ContatoModule
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txbCargo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txbTelefone;
     }
 }

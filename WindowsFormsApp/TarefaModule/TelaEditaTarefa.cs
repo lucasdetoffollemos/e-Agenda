@@ -21,6 +21,8 @@ namespace WindowsFormsApp
         {
             InitializeComponent();
             tarefa = t;
+            txbPercentual.PromptChar = ' ';
+            
             
             InicializaCamposTarefa();
         }

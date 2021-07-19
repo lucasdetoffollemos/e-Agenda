@@ -36,8 +36,8 @@ namespace WindowsFormsApp
             this.txbTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbPercentual = new System.Windows.Forms.TextBox();
             this.btEditar = new System.Windows.Forms.Button();
+            this.txbPercentual = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -112,14 +112,6 @@ namespace WindowsFormsApp
             this.label4.TabIndex = 9;
             this.label4.Text = "Percentual de Conclusão ";
             // 
-            // txbPercentual
-            // 
-            this.txbPercentual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPercentual.Location = new System.Drawing.Point(482, 351);
-            this.txbPercentual.Name = "txbPercentual";
-            this.txbPercentual.Size = new System.Drawing.Size(100, 30);
-            this.txbPercentual.TabIndex = 10;
-            // 
             // btEditar
             // 
             this.btEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,14 +123,24 @@ namespace WindowsFormsApp
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
+            // txbPercentual
+            // 
+            this.txbPercentual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPercentual.Location = new System.Drawing.Point(482, 351);
+            this.txbPercentual.Mask = "000";
+            this.txbPercentual.Name = "txbPercentual";
+            this.txbPercentual.Size = new System.Drawing.Size(100, 30);
+            this.txbPercentual.TabIndex = 13;
+            this.txbPercentual.ValidatingType = typeof(int);
+            // 
             // TelaEditaTarefa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 593);
-            this.Controls.Add(this.btEditar);
             this.Controls.Add(this.txbPercentual);
+            this.Controls.Add(this.btEditar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbPrioridade);
             this.Controls.Add(this.label3);
@@ -163,7 +165,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.TextBox txbTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbPercentual;
         private System.Windows.Forms.Button btEditar;
+        private System.Windows.Forms.MaskedTextBox txbPercentual;
     }
 }

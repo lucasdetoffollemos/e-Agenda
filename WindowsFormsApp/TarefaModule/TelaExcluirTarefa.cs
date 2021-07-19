@@ -69,18 +69,31 @@ namespace WindowsFormsApp
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
 
-                bool foiExcluido = controlador.Excluir(id);
+                bool existeId = controlador.Existe(id);
 
-                if (foiExcluido)
+                if (existeId)
                 {
-                    MessageBox.Show("Tarefa excluida com sucesso");
-                    CarregarTodasAsTarefas();
+                    bool foiExcluido = controlador.Excluir(id);
+
+                    if (foiExcluido)
+                    {
+                        MessageBox.Show("Tarefa excluida com sucesso");
+                        CarregarTodasAsTarefas();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Problema ao excluir a tarefa");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Problema ao excluir a tarefa");
+                    MessageBox.Show("Id não encontrado, tente novamente.");
                 }
-               
+
+                txbId.Text = "";
+
+
+
             }
         }
 

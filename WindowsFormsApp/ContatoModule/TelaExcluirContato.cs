@@ -59,17 +59,27 @@ namespace WindowsFormsApp.ContatoModule
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
 
-                bool foiExcluido = controlador.Excluir(id);
+                bool existeContato = controlador.Existe(id);
 
-                if (foiExcluido)
+                if (existeContato)
                 {
-                    MessageBox.Show("Contato excluido com sucesso");
-                    CarregaContatos();
+                    bool foiExcluido = controlador.Excluir(id);
+
+                    if (foiExcluido)
+                    {
+                        MessageBox.Show("Contato excluido com sucesso");
+                        CarregaContatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Problema ao excluir o contato");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Problema ao excluir o contato");
+                    MessageBox.Show("Id não encontrado tente novamente.");
                 }
+
             }
         }
     }

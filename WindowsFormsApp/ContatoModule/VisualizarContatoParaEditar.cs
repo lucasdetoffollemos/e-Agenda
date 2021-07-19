@@ -60,13 +60,22 @@ namespace WindowsFormsApp.ContatoModule
             {
                 string idStr = txbId.Text;
                 int id = Convert.ToInt32(idStr);
-                Contato c = pegarOContatoASerEditado(id);
+                bool existeContato = controlador.Existe(id);
 
-                this.Hide();
-                TelaEditaContato telaSelecionada = new TelaEditaContato(c);
-                telaSelecionada.Closed += (s, args) => this.Show();
-                telaSelecionada.Closed += (s, args) => CarregaContatos();
-                telaSelecionada.Show();
+                if (existeContato)
+                {
+                    Contato c = pegarOContatoASerEditado(id);
+
+                    this.Hide();
+                    TelaEditaContato telaSelecionada = new TelaEditaContato(c);
+                    telaSelecionada.Closed += (s, args) => this.Show();
+                    telaSelecionada.Closed += (s, args) => CarregaContatos();
+                    telaSelecionada.Show();
+                }
+                else{
+                    MessageBox.Show("Id não encontrado tente novamente.");
+                }
+               
 
 
             }

@@ -48,19 +48,27 @@ namespace WindowsFormsApp.ContatoModule
             contato.Cargo = txbCargo.Text;
             contato.Empresa = txbEmpresa.Text;
 
-            string resultado = controlador.Editar(contato.Id, contato);
-
-            if (resultado.Equals("ESTA_VALIDO"))
+            if (string.IsNullOrEmpty(contato.Nome) || string.IsNullOrEmpty(contato.Email) || string.IsNullOrEmpty(contato.Telefone) || string.IsNullOrEmpty(contato.Cargo) || string.IsNullOrEmpty(contato.Empresa))
             {
-                MessageBox.Show("Tarefa editada com sucesso.");
-
-                this.Close();
-                this.Dispose();
+                MessageBox.Show("Preencha todos os campos");
             }
             else
             {
-                MessageBox.Show(resultado);
+                string resultado = controlador.Editar(contato.Id, contato);
+
+                if (resultado.Equals("ESTA_VALIDO"))
+                {
+                    MessageBox.Show("Tarefa editada com sucesso.");
+
+                    this.Close();
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show(resultado);
+                }
             }
+           
         }
     }
 }
